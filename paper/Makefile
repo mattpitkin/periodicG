@@ -11,4 +11,4 @@ pdf: comment.tex comment.bib
 	ps2pdf comment.ps
 
 clean:
-	rm -f *.aux *.log *.out *.blg *.dvi *.bbl *.backup
+	rm -f *.aux *.log *.out *.blg *.dvi *.backup
