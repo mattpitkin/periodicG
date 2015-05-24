@@ -19,7 +19,7 @@ in the length of the day. I have used Bayesian model comparison to test this cla
 other hypotheses that could explain the variation in the $G$ measurements. I have used the data from
 the initial claim, and from an updated set of compiled $G$ measurements that more accurately reflect
 the experimental dates, and find that a model containing an additional unknown Gaussian noise component
-is hugely favoured, by factors of $\gtrsim e^{30}$, over any model containing a sinusoidal component.}
+is hugely favoured, by factors of $\gtrsim e^{30}$, over two models allowing for a sinusoidal component.}
 
 \pacs{04.80.-y}{Experimental studies of gravity}
 \pacs{07.05.Kf}{Data analysis: algorithms and implementation; data management}
@@ -58,14 +58,14 @@ over, e.g.
 \begin{equation}\label{eq:evidence}
  p(d|H_i,I) \equiv Z_i = \int^{\vect{\theta}} p(d|\vect{\theta}_i,H_i,I) p(\vect{\theta}_i|H_i,I) {\rm d}\vect{\theta}_i,
 \end{equation}
-where $p(d|\vect{\theta}_i,H_i,I)$ is the likelihood function of the data given at set of model parameters $\vect{\theta}$. If
+where $p(d|\vect{\theta}_i,H_i,I)$ is the likelihood function of the data given at set of model parameters $\vect{\theta}_i$. If
 the model contains more than one parameter then this is a multi-dimensional integral. In the hypotheses I define
 below the number of parameters are small enough that the likelihoods can be evaluated on a grid in the parameter
 space and the integrals performed numerically using the trapezium rule.
 
 The general model that I use for my hypotheses includes a sinusoid and an offset
 \begin{equation}\label{eq:model}
- m(\mu_G, A, P, \phi_0, T_i) = A\sin{(\phi_0 + 2\pi (T_k-t_0)/P)} + \mu_G,
+ m(\mu_G, A, P, \phi_0, T_k) = A\sin{(\phi_0 + 2\pi (T_k-t_0)/P)} + \mu_G,
 \end{equation}
 where $\mu_G$ is the offset value, $A$ is the sinusoid amplitude, $\phi_0$ is an initial phase at an epoch $t_0$,
 $P$ is the sinusoid period, and $T_k$ is the time. Note that the $t_0$ term here is completely correlated
@@ -89,7 +89,7 @@ Assuming that the uncertainty on $T_k$ is Gaussian I use a prior probability dis
 \begin{equation}
  p(T_k|H,I) = \frac{1}{\sqrt{2\pi}\sigma_{t,k}}\exp{\left(-\frac{(T_k-t_k)^2}{2\sigma_{t,k}^2} \right)}.
 \end{equation}
-The errors on the measurement times are independent parameters, so the integral in eq.~\ref{margT} has to be
+The errors on the measurement times are independent parameters, so the integral in eq.~\ref{eq:margT} has to be
 performed for each data point.
 
 The joint likelihood for the whole dataset, $\vect{d}$, is then given by the product of the individual likelihoods
@@ -118,7 +118,7 @@ the experimental times and then generally used Table~XVII of \cite{RevModPhys.84
 For the BIPM-13 measurements I used the combined servo and Cavendish value from \cite{PhysRevLett.113.039901}
 and for the LEN-14 measurements I used the values from \cite{2014Natur.510..518R}. The times and $G$ values I
 have used can be seen in table~\ref{tab:Gs}. This data, and the updated data from \cite{2015arXiv150501774S},
-can be seen in fig.~\ref{Gsdata}.
+can be seen in fig.~\ref{fig:Gdata}.
 
 \begin{table}
 \caption{Experiment times and values of $G$ used in \cite{2015EL....11010002A}. Dates with a
