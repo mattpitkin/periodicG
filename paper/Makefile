@@ -10,5 +10,13 @@ pdf: comment.tex comment.bib
 	dvips comment.dvi
 	ps2pdf comment.ps
 
+revised: comment_revised.tex comment_revised.bib
+	latex comment_revised.tex
+	bibtex comment_revised
+	latex comment_revised.tex
+	latex comment_revised.tex
+	dvips comment_revised.dvi
+	ps2pdf comment_revised.ps
+
 clean:
 	rm -f *.aux *.log *.out *.blg *.dvi *.backup
