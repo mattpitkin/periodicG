@@ -1,4 +1,4 @@
-\documentclass[comment]{epl2}
+\documentclass[doublecol]{epl2}
 
 \usepackage{amsmath, amssymb}
 \usepackage{multirow}
@@ -24,7 +24,7 @@
 
 In \cite{2015EL....11010002A} the authors claim to observe a periodic signal in measurements of
 Newton's gravitational constant, $G$. Specifically they find a signal with a period of 5.9\,years that
-is very strongly correlated with variations in the observed length of the day
+is very strongly correlated with variations in the observed length of day
 \cite{2013Natur.499..202H}. Here I present a reanalysis of the data used in \cite{2015EL....11010002A}
 performing Bayesian model selection to test the significance of the hypothesis that the data does contain
 a periodic signal compared to other potential models. In light of the updated information on the times
@@ -45,27 +45,23 @@ evidences for the different hypotheses. The Bayesian odds ratio for two hypothes
 where $p(d|H_i,I)$ is the evidence (or marginal likelihood) for hypothesis $H_i$ given some data $d$,
 $p(H_i|I)$ is the prior probability for $H_i$, and $I$ is information concerning any other assumptions used to
 define the problem at hand. When comparing hypotheses I assume that they are equally
-probable a priori, so the prior ratio is unity. Therefore, to calculate the odds ratio I just calculate
+probable a priori, so the prior ratio is unity. Therefore, I just calculate
 the ratio of evidences for each hypothesis (often called the Bayes factor). If a given hypothesis is defined
-by a model, $m_i$, containing a set of parameters, $\vect{\theta}_i$, with their own priors,
+by a model containing a set of parameters, $\vect{\theta}_i$, with their own priors,
 $p(\vect{\theta}_i|H_i,I)$, then to calculate the evidence, $Z_i$, the parameters must be marginalised (i.e.\ integrated)
-over, e.g.
+over, e.g.\
 \begin{equation}\label{eq:evidence}
  p(d|H_i,I) \equiv Z_i = \int^{\vect{\theta}} p(d|\vect{\theta}_i,H_i,I) p(\vect{\theta}_i|H_i,I) {\rm d}\vect{\theta}_i,
 \end{equation}
-where $p(d|\vect{\theta}_i,H_i,I)$ is the likelihood function of the data given at set of model parameters $\vect{\theta}_i$. If
-the model contains more than one parameter then this is a multi-dimensional integral. In the hypotheses I define
-below the number of parameters are small enough that the likelihoods can be evaluated on a grid in the parameter
-space and the integrals performed numerically using the trapezium rule.
+where $p(d|\vect{\theta}_i,H_i,I)$ is the likelihood function of the data given at set of model parameters $\vect{\theta}_i$.
+In the hypotheses I define below the number of parameters are small enough that the likelihoods can be evaluated on a grid in the parameter space and the integrals performed numerically using the trapezium rule.
 
 The general model that I use for my hypotheses includes a sinusoid and an offset
 \begin{equation}\label{eq:model}
  m(\mu_G, A, P, \phi_0, T_k) = A\sin{(\phi_0 + 2\pi (T_k-t_0)/P)} + \mu_G,
 \end{equation}
 where $\mu_G$ is the offset value, $A$ is the sinusoid amplitude, $\phi_0$ is an initial phase at an epoch $t_0$,
-$P$ is the sinusoid period, and $T_k$ is the time. Note that the $t_0$ term here is completely correlated
-with $\phi_0$, so only $\phi_0$ needs to be varied while $t_0$ is held fixed. The values and ranges of these 
-parameters will change for each hypothesis.
+$P$ is the sinusoid period, and $T_k$ is the time.
 
 In this analysis I have tested four different hypotheses of increasing complexity to explain the measurements of $G$:
 \begin{enumerate}
@@ -79,34 +75,32 @@ In this analysis I have tested four different hypotheses of increasing complexit
  offset value, an unknown common Gaussian noise term and a sinusoid with unknown amplitude, initial phase and period.
 \end{enumerate}
 These each correspond to a different set of parameters required in $\vect{\theta}$ and also the number of
-parameter required in the integral of eq.~\ref{eq:evidence}. I have marginalised over an uncertainty in the time
-of each experiment.
+parameter required in the integral of eq.~\ref{eq:evidence}.
 
-For an initial examination of the claim in \cite{2015EL....11010002A} I have used their Figure~1 to read off
-the experimental times and then generally used Table~XVII of \cite{RevModPhys.84.1527} for values of $G$.
+For an initial examination of the claim in \cite{2015EL....11010002A} I have used their Figure~1 to read-off
+the experimental times and then (generally) used Table~XVII of \cite{RevModPhys.84.1527} for values of $G$.
 For the BIPM-13 measurements I used the combined servo and Cavendish value from \cite{PhysRevLett.113.039901}
-and for the LEN-14 measurements I used the values from \cite{2014Natur.510..518R}.
+and for the LENS-14 measurements I used the values from \cite{2014Natur.510..518R}.
 
 In \cite{2015EL....11010002A} the given experiment times are assumed to be correct with no associated error.
 However, many of the times used correspond to the received date of the respective paper rather than the
-date of the actual experiment (see \cite{2015arXiv150501774S} for the best estimates of the actual experiment
-dates).  In analysing this data I specified uncertainties on the experiment times of
+date of the actual experiment.  In analysing this data I specified uncertainties on the experiment times of
 $\sigma_{t,i} = 0.25$\,years (with the exception of the JILA-10 and LENS-14 measurements for which I use uncertainties
-of one week) before the given time (this is based on many of the observations being taken as the journal article
-received date and hence the experiment occuring before this date). I have marginalised over this time uncertainty
-for each data point.  
+of one week) before the given time. I have taken into account this uncertainty on the
+time of each data point, by marginalising over the uncertainty for each data point.
 
 \section{Results}
 
 The odds ratios comparing hypotheses when using the $G$ dataset of \cite{2015EL....11010002A} are summarised in
-table~\ref{tab:results}. The odds ratios for the Jeffreys and uniform priors on the scale factor parameters
-show only minor differences (they are consistent with a factor of two), so I will only discuss the results from using the Jeffreys prior. It is clear that
-hypotheses including extra parameters over that for hypothesis 1 (i.e.\ including a sinusoidal component and/or
-and extra unknown noise component) are hugely favoured by factors of $\gtrsim e^{100}$. The two hypotheses, $H_3$
+table~\ref{tab:results}. It is clear that hypotheses including extra parameters over that for hypothesis 1
+(i.e.\ including a sinusoidal component and/or and extra unknown noise component) are hugely favoured by factors
+of $\gtrsim e^{100}$. The two hypotheses, $H_3$
 and $H_4$, containing a sinusoidal signal are both approximately equally probable. However, hypothesis 2, just
 containing the additional unknown noise term and the unknown offset, is hugely favoured by factors $\sim e^{30}$
-over $H_3$ and $H_4$. This suggests that the simple model that variations are just due to an unknown Gaussian
+over $H_3$ and $H_4$. This shows that the simple model that variations are just due to an unknown Gaussian
 noise term is far more likely to be the cause of the variations than an additional sinusoidal variation.
+This is due to Bayesian model selection naturally applying a penalty for including additional parameters that
+do not significantly increase the evidence.
 
 \begin{table}
 \caption{Bayesian odds ratios for the four hypotheses ($i$ represents rows and $j$ represents columns)
@@ -126,51 +120,24 @@ when using the data used in \cite{2015EL....11010002A}.}
 \end{table}
 
 It is, however, interesting to look at the posterior probability distributions for each of the parameters used
-in hypotheses 2, 3 and 4. In fig~\ref{fig:h2} the posterior for $\sigma_{\rm sys}$ shows that this parameter
-is peaked well away from zero.
-In fig.~\ref{fig:h3}, which shows the posteriors for hypothesis 3, it is clear that in the
-posterior for period there is a large spike in probability around the claimed period of 5.9\,years.
-A similar spike shows up in fig.~\ref{fig:h4} for hypothesis 4, but is much less pronounced. Despite this we
-have shown that the hypotheses containing a sinusoid are hugely less favoured than for hypothesis 2.
-This is due to Bayesian model selection naturally applying a penalty for including additional parameters that
-to not significantly increase the evidence.
-
-I have also assessed the significance of the peak for hypothesis 3 by rerunning that analysis 20 times,
+in hypotheses. From the posteriors on the period for hypothesis 3 I see a clear large spike in probability
+around the claimed period of 5.9\,years. A similar spike shows up in for hypothesis 4, but is much less pronounced.
+However, I have also assessed the significance of the period peak for hypothesis 3 by rerunning that analysis 20 times,
 but each time randomly shuffling the $G$ values (whilst keeping the measurement times the same). This should remove
-any real periodicity in the data. The ratio of each of these evidence values compared to the un-shuffled data are
-shown in fig~\ref{fig:ensemble}. Out of these 20 runs there was one time when the hypothesis using the shuffled data
-is more favoured than when using the un-shuffled data. The posterior for this case is shown in fig.~\ref{fig:shuf}
-showing that seemingly significant spikes in the period can be produced in randomised data.
-
-\begin{figure}
- \centerline{\includegraphics[width=0.6\textwidth]{ensemble}}
- \caption{The odds ratio comparing the evidence for hypothesis 3 when run on randomly shuffled data compared to
- the unshuffled data when using the data from table~\ref{tab:Gs}.}
- \label{fig:ensemble}
-\end{figure}
-
-\begin{figure}
- \centerline{\includegraphics[width=1.0\textwidth]{shuffled}}
- \caption{The shuffled data and the pdfs on $A$ and $P$ for the shuffled data with the largest evidence under
- hypothesis 3. The best fit sinusoid, with a period of 5.9\,years, from \cite{2015EL....11010002A} is also plotted
- as a solid black line.}
- \label{fig:shuf}
-\end{figure}
+any real periodicity in the data.  Out of these 20 runs there was one time when the hypothesis using the shuffled data
+is more favoured than when using the un-shuffled data and another couple within a factor of two. The posteriors for
+these case also show that very similar spikes in the period can be produced in randomised data.
 
 \section{Updated dataset}
 
 Following my initial investigations of the claims of \cite{2015EL....11010002A} Schlamminger, Gundlach and Newman
 also examined the claim \cite{2015arXiv150501774S} in particular noting that the experimental times (and also number 
-of experimental data used) in the original work are not accurate (e.g.\ the UZH-06 result that is given as
-mid-2006 was actually performed in mid-2001). They examined the literature to compile a more complete list of
+of experimental data used) in the original work are not accurate. They examined the literature to compile a more complete list of
 experiments with information on the actual dates that the experiments were
-performed. In table~\ref{tab:Gsnew} I reproduce their information, using their estimates of the mean experiment
-date (generally taken as around the centre of any known experimental runs that went into producing the final result)
-and an error on that time given as 20\% of the time span over which the experiments were performed.
+performed.
 
 I have reanalysed this new dataset for each of the four hypotheses. When integrating over the
-time error from eq.~(\ref{eq:margT}) I have set $X=Y=2.5$, so that the the prior range is symmetric around the
-mean experiment time with the standard deviations using the values given in table~\label{tab:Gsnew}.
+time error I have now set the error to be symmetric around the mean experiment time.
 For all other parameters I have used the same prior ranges as before.
 The Bayesian odds ratios for each of these cases are given in table~\ref{tab:newresults} from which it can
 be seen that hypothesis 2 is still favoured over all other hypotheses by a huge amount. However, hypothesis 3
@@ -197,9 +164,8 @@ when using the data from \cite{2015arXiv150501774S}.}
 \section{Conclusions}
 
 I have reanalysed the data consisting of measurements of Newton's gravitational constant $G$ from
-\cite{2015EL....11010002A} and \cite{2015arXiv150501774S}. In \cite{2015EL....11010002A} there was claimed
-evidence for a periodic component with a period of 5.9\,years that was very strongly correlated with the
-period of changes of the length of the day. It was not suggested that $G$ was actually varying on these
+\cite{2015EL....11010002A} and \cite{2015arXiv150501774S} to asses the claim a periodic
+component with a period of 5.9\,years. It was not suggested that $G$ was actually varying on these
 timescales, but rather that there could be some systematic effect on the measurement process that was
 correlated with the mechanism that leads to the variation in the length of the day.
 
@@ -216,6 +182,13 @@ length of the day could couple into measurements of $G$), then the evidence in f
 signal would dramatically increase. However, without such prior knowledge using such a constraint would strongly bias
 us.
 
+Since starting this work the authors of the original work have added an Appendix (see \cite{AndersonRevised}) taking
+into account the work of \cite{2015arXiv150501774S}. They fit an additional sinusoid to the data and note that the
+significance of the correlation with the length of day decreases. I expect that calculating the evidence for a model
+including two sinusoids would not lead to such a model being favoured over the simpler model containing just the
+extra Gaussian noise term, due to the increase in parameter space being penalised if they fit does not significantly
+improve.
+
 \acknowledgements
 
 I would like to thank Prof.\ J.\ Faller for useful discussions, Prof.\ C.\ Speake for putting me in contact with
@@ -223,6 +196,6 @@ Dr.\ S.\ Schlamminger, and Dr.\ Schlamminger for providing me with a data file o
 I am funded by the STFC under grant ST/L000946/1.
 
 \bibliographystyle{eplbib}
-\bibliography{comment}
+\bibliography{comment_revised}
 
 \end{document}
