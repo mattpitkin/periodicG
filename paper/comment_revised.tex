@@ -1,4 +1,4 @@
-\documentclass[comment]{epl2}
+\documentclass[doublecol]{epl2}
 
 \usepackage{amsmath, amssymb}
 \usepackage{multirow}
@@ -27,7 +27,7 @@ In \cite{2015EL....11010002A} the authors claim to observe a periodic signal in 
 Newton's gravitational constant, $G$. Specifically they find a 5.9 year period signal that
 is strongly correlated with variations in the observed length of day
 \cite{2013Natur.499..202H}. They do not suggest that $G$ actually varies on these
-timescales, but rather that there could be some systematic effect on the measurement process that is
+time-scales, but rather that there could be some systematic effect on the measurement process that is
 correlated with the mechanism that leads to the variation in the length of day.
 Here I present a reanalysis of the data used in \cite{2015EL....11010002A}
 using Bayesian model selection to test the hypothesis that the data contains
@@ -45,7 +45,7 @@ evidences for the different hypotheses. The odds ratio for two hypotheses $H_i$ 
 \begin{equation}
  \mathcal{O}_{ij} = \left(p(d|H_i,I)/p(d|H_i,I)\right)\times\left(p(H_i|I))/(p(H_j|I)\right)
 \end{equation}
-where $p(d|H_i,I) \equiv Z_i$ is the evidence for hypothesis $H_i$ given some data $d$,
+where $p(d|H_i,I)$ is the evidence for hypothesis $H_i$ given some data $d$,
 $p(H_i|I)$ is the prior probability for $H_i$, and $I$ is information concerning any other assumptions.
 When comparing hypotheses I assume that they are equally
 probable a priori, so the prior ratio is unity. Therefore, I just calculate
@@ -54,7 +54,7 @@ by a set of parameters, $\vect{\theta}_i$, with their own priors,
 $p(\vect{\theta}_i|H_i,I)$, then to calculate the evidence the parameters must be marginalised
 over, e.g.\
 \begin{equation}\label{eq:evidence}
- Z_i = \int^{\vect{\theta}} p(d|\vect{\theta}_i,H_i,I) p(\vect{\theta}_i|H_i,I) {\rm d}\vect{\theta}_i,
+ p(d|H_i,I) = \int^{\vect{\theta}} p(d|\vect{\theta}_i,H_i,I) p(\vect{\theta}_i|H_i,I) {\rm d}\vect{\theta}_i,
 \end{equation}
 where $p(d|\vect{\theta}_i,H_i,I)$ is the likelihood function of the data given at set of model parameters $\vect{\theta}_i$.
 
@@ -69,9 +69,9 @@ In this analysis I have compared four different hypotheses, $H_i$, to explain th
 \begin{enumerate*}[label=$H_{\arabic*}$\upshape)]
  \item the data is consistent with Gaussian errors, given by the experimental error bars $\sigma_{e,k}$, about an 
  unknown $\mu_G$;
- \item as for $H_1$, but also including an unknown common Gaussian noise term $\sigma_{\mathrm sys}$;
+ \item as for $H_1$, but also including an unknown common Gaussian noise term $\sigma_{\mathrm{sys}}$;
  \item as for $H_1$, but also including a sinusoid with unknown $A$, $\phi_0$ and $P$; and, 
- \item as for $H_3$, but also including an unknown $\sigma_{\mathrm sys}$.
+ \item as for $H_3$, but also including an unknown $\sigma_{\mathrm{sys}}$.
 \end{enumerate*}
 These each correspond to a different set of parameters required in $\vect{\theta}$ and also the number of
 parameter required in the integral of eq.~\ref{eq:evidence}.
@@ -81,11 +81,11 @@ the experimental times and then used Table~XVII of \cite{RevModPhys.84.1527} for
 the BIPM-13 measurements I used the combined servo and Cavendish value from \cite{PhysRevLett.113.039901}
 and for the LENS-14 measurements I used the values from \cite{2014Natur.510..518R}.}.
 
-In \cite{2015EL....11010002A} the given experiment times are assumed to be correct with no associated error.
+In \cite{2015EL....11010002A} the experiment times are given no associated error.
 However, many of the times used correspond to the received date of the respective paper rather than the
 date of the actual experiment.  In analysing this data I specified uncertainties on the experiment times of
 $\sigma_{t} = 0.25$\,years (with the exception of the JILA-10 and LENS-14 measurements for which I use uncertainties
-of one week) before the given time. I have taken this time uncertainty into account by marginalising over the
+of one week) before the given time. I have taken this time uncertainty into account by marginalising over
 it for each data point.
 
 \section{Results}
@@ -94,7 +94,7 @@ The odds ratios comparing hypotheses when using the $G$ dataset of \cite{2015EL.
 table~\ref{tab:results}. It is clear that hypotheses including extra parameters over that for $H_1$
 are hugely favoured by factors of $\gtrsim e^{100}$. The two hypotheses, $H_3$
 and $H_4$, containing a sinusoidal signal are both approximately equally probable. However, $H_2$, just
-containing the additional unknown noise term $\sigma_{\mathrm sys}$ and the unknown offset $\mu_G$, is
+containing the additional unknown noise term $\sigma_{\mathrm{sys}}$ and the unknown offset $\mu_G$, is
 hugely favoured by factors $\sim e^{30}$
 over $H_3$ and $H_4$. This shows that the simple model that variations are just due to an unknown Gaussian
 noise term is far more likely to be the cause of the variations than an additional sinusoidal variation.
@@ -102,25 +102,23 @@ This is due to Bayesian model selection naturally applying a penalty for includi
 do not significantly increase the evidence.
 
 \begin{table}
-\caption{Odds ratios for the four hypotheses ($i$ represents rows and $j$ represents columns)
+\caption{Log odds ratios for the four hypotheses ($i$ represents rows and $j$ represents columns)
 when using the data used in \cite{2015EL....11010002A}, with those when using the data from
 \cite{2015arXiv150501774S} in parentheses.}
 \label{tab:results}
 \begin{center}
  \begin{tabular}{c|ccc}
- & \multicolumn{3}{c}{$\mathcal{O}_{ij} = Z_i/Z_j$} \\
- \hline
-   & $Z_2$ & $Z_3$ & $Z_4$ \\
+  $\ln{\mathcal{O}_{ij}}$ & $H_2$ & $H_3$ & $H_4$ \\
   \specialrule{0.25pt}{0.75pt}{0.75pt}
-  $Z_1$ & $e^{-132.5}$ ($e^{-140.2}$) & $e^{-102.2}$ ($e^{-65.8}$) & $e^{-102.5}$ ($e^{-110.3}$) \\ 
-  $Z_2$ &  & $e^{30.3}$ ($e^{74.4}$) & $e^{29.9}$ ($e^{29.9}$) \\
-  $Z_3$ &  &  & $0.74$ ($e^{-44.5}$)
+  $H_1$ & $-133$ ($-140$) & $-102.2$ ($-66$) & $-103$ ($-110$) \\ 
+  $H_2$ &  & $30$ ($74$) & $30$ ($30$) \\
+  $H_3$ &  &  & $-0.3$ ($-45$)
  \end{tabular}
 \end{center}
 \end{table}
 
-I have also looked at the posterior probability distributions for the period. From the posterior on the
-period for $H_3$ I see a clear lone spike in probability around the claimed period of 5.9\,years. A similar spike
+I have also looked at the posterior probability distributions for the period and for $H_3$ I see a
+clear lone spike in probability around the claimed period of 5.9\,years. A similar spike
 shows up for $H_4$, but is much less pronounced.
 I have assessed the significance of this period probability peak for $H_3$ by rerunning that analysis 20 times,
 but each time randomly shuffling the $G$ values to remove any real periodicity in the data.  Out of these 20 runs
@@ -147,24 +145,23 @@ I have reanalysed the data consisting of measurements of $G$ from
 component with a period of 5.9\,years.
 
 Using Bayesian model selection, and four different hypotheses to describe the variations in the data, and including
-uncertainties on the experimental times, I have found that the best model to describe the data is one in which
-there is an additional common unknown Gaussian noise term on top of the oberserved experimental errors. This is 
+uncertainties on the experimental times, I have found that the best model is one in which
+there is an additional unknown Gaussian noise term on top of the observed experimental errors. This is 
 favoured over a model also containing a sinusoidal term by factors of $\gtrsim e^{30}$. I also find that periodic
 signals can easily be found in random permutations of the data suggesting that the observed periodicity seen in
 \cite{2015EL....11010002A} is just a random artifact of the data.
 
-Following the publication of \cite{2015EL....11010002A} the authors have added an Appendix (see
-\cite{AndersonRevised}) taking into account the work of \cite{2015arXiv150501774S}. They fit an additional
-sinusoid to the updated data,  but note that the significance of the correlation with the length of day decreases. 
-I expect that calculating the evidence for a model including two sinusoids would not lead to such a model being
+Following the publication of \cite{2015EL....11010002A} the authors have taken into account the work of \cite{2015arXiv150501774S} (see \cite{AndersonRevised}). They fit an additional
+sinusoid to the updated data and note that the significance of the correlation with the length of day decreases. 
+I expect that calculating the evidence for a model including two sinusoids would not cause such a model to be
 favoured over the simpler model containing just the
-extra Gaussian noise term as the increase in parameter space would be penalised if the fit does not 
+extra Gaussian noise term, as the increase in parameter space would be penalised if the fit does not 
 significantly improve.
 
 I note that if there were good a priori reasons to expect a periodic component with a specific period in the data
 (i.e.\ if there were a good reason why the the mechanism leading to changes in the length of day could couple into 
 measurements of
-$G$), then the evidence for models containing a periodic signal may dramatically increase. However, without such
+$G$), then the evidence for models containing such a periodic signal may dramatically increase. However, without such
 prior knowledge using such a constraint would strongly bias us.
 
 
