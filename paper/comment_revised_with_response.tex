@@ -54,9 +54,9 @@ by a set of parameters, $\vect{\theta}_i$, with their own priors,
 $p(\vect{\theta}_i|H_i,I)$, then to calculate the evidence the parameters must be marginalised
 over, e.g.\
 \begin{equation}\label{eq:evidence}
- p(d|H_i,I) = \int^{\vect{\theta}} p(d|\vect{\theta}_i,H_i,I) p(\vect{\theta}_i|H_i,I) {\rm d}\vect{\theta}_i,
+ p(d|H_i,I) = \int^{\vect{\theta}_i} p(d|\vect{\theta}_i,H_i,I) p(\vect{\theta}_i|H_i,I) {\rm d}\vect{\theta}_i,
 \end{equation}
-where $p(d|\vect{\theta}_i,H_i,I)$ is the likelihood function of the data given at set of model parameters $\vect{\theta}_i$.
+where $p(d|\vect{\theta}_i,H_i,I)$ is the likelihood function of the data given a set of model parameters $\vect{\theta}_i$.
 
 The general model that I use for my hypotheses is
 \begin{equation}\label{eq:model}
@@ -74,7 +74,7 @@ In this analysis I have compared four different hypotheses, $H_i$, to explain th
  \item as for $H_3$, but also including an unknown $\sigma_{\mathrm{sys}}$.
 \end{enumerate*}
 These each correspond to a different set of parameters required in $\vect{\theta}$ and also the number of
-parameter required in the integral of eq.~\ref{eq:evidence}.
+parameters required in the integral of eq.~\ref{eq:evidence}.
 
 For an initial examination of the claim in \cite{2015EL....11010002A} I have used their Figure~1 to read-off
 the experimental times and then used Table~XVII of \cite{RevModPhys.84.1527} for values of $G$\footnote{For
@@ -96,7 +96,7 @@ are hugely favoured by factors of $\gtrsim e^{100}$. The two hypotheses, $H_3$
 and $H_4$, containing a sinusoidal signal are both approximately equally probable. However, $H_2$, just
 containing the additional unknown noise term $\sigma_{\mathrm{sys}}$ and the unknown offset $\mu_G$, is
 hugely favoured by factors $\sim e^{30}$
-over $H_3$ and $H_4$. This shows that the simple model that variations are just due to an unknown Gaussian
+over $H_3$ and $H_4$. This shows that the simple model for which variations are just due to an unknown Gaussian
 noise term is far more likely to be the cause of the variations than an additional sinusoidal variation.
 This is due to Bayesian model selection naturally applying a penalty for including additional parameters that
 do not significantly increase the evidence.
@@ -129,7 +129,7 @@ The posteriors for these cases also show very similar spikes in the period to th
 Since the acceptance of \cite{2015EL....11010002A} Schlamminger {\it et al.} \cite{2015arXiv150501774S}
 examined the claim, in particular noting that the experimental times in the original work
 are not accurate. They examined the literature to compile a more complete list of
-experiments with information on the actual dates that the experiments were performed.
+experiments with information on the actual dates on which the experiments were performed.
 I have reanalysed this new dataset for each of the four hypotheses. When marginalising over the
 time error I have now set the error to be symmetric around the mean experiment times.
 For all other parameters I have used the same prior ranges as in the initial analysis.
@@ -155,13 +155,13 @@ Following the publication of \cite{2015EL....11010002A} the authors have taken i
 sinusoid to the updated data and note that the significance of the correlation with the length of day decreases. 
 I expect that calculating the evidence for a model including two sinusoids would not cause such a model to be
 favoured over the simpler model containing just the
-extra Gaussian noise term, as the increase in parameter space would be penalised if the fit does not 
+extra Gaussian noise term, as the increase in parameter space will be penalised if the fit does not 
 significantly improve.
 
 I note that if there were good a priori reasons to expect a periodic component with a specific period in the data
-(i.e.\ if there were a good reason why the the mechanism leading to changes in the length of day could couple into 
+(i.e.\ if there were a good reason why the mechanism leading to changes in the length of day could couple into 
 measurements of
-$G$), then the evidence for models containing such a periodic signal may dramatically increase. However, without such
+$G$), then the evidence for models containing such a periodic signal might dramatically increase. However, without such
 prior knowledge using such a constraint would strongly bias us.
 
 \section{Reply to ``Reply to comment by M. Pitkin on ``Measurements of Newton's 
@@ -173,7 +173,7 @@ offset and one or two periodic components are favoured over a model with no peri
 They show that once the best fits for the models containing one or two periodic components are 
 removed from the data the residuals have smaller variance, and have a distribution that is closer 
 to a Gaussian distribution, than for the model containing no periodic component. These findings are 
-not at all surprising.  If one adds more parameters to the model then one can almost always find a 
+not at all surprising.  If one adds more parameters to the model, then one can almost always find a 
 better fit with smaller residuals -- in cases where the additional model complexity adds no extra 
 information this is commonly known as over-fitting and is related to the concept of Occam's razor. 
 A Bayesian analysis, such as I performed, naturally allows one to penalise extra complexity when it 
@@ -191,7 +191,7 @@ just contain a constant offset, but also contains an additional unknown noise te
 suggest that the quoted errors on the $G$ measurements are underestimates of the true noise.
 
 A further addition that I was able to include in my analysis, but which the authors of the original 
-article do not appear to have addressed is that there are also error bars on the on the 
+article do not appear to have addressed is that there are also error bars on the
 experimental times. This may also weaken their fit.
 
 Further $G$ measurement data may change my conclusions, but with the current data I stand by my 
